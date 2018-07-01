@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        applicationId "org.xl.mvvm.httpdemo"
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    //rx java 2
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.16'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    //retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    //gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+    //okhttp
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    //rx关系view生命周期
+    implementation 'com.trello.rxlifecycle2:rxlifecycle:2.2.1'
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1'
+}
